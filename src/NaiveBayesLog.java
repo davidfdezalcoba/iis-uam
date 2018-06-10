@@ -124,8 +124,8 @@ public class NaiveBayesLog {
 			String[] tokens = mess.replaceAll("[^a-zA-Z ]", "").toLowerCase().split("\\s+");
 
 			for (String tok : tokens) {
-				ps += Math.log(probSpam(tok));
-				pn += Math.log(probNonSpam(tok));
+				ps += Math.log(probPos(tok));
+				pn += Math.log(probNeg(tok));
 			}
 
 			if (ps >= pn)
@@ -157,8 +157,8 @@ public class NaiveBayesLog {
 			String[] tokens = mess.replaceAll("[^a-zA-Z ]", "").toLowerCase().split("\\s+");
 
 			for (String tok : tokens) {
-				ps += Math.log(probSpam(tok));
-				pn += Math.log(probNonSpam(tok));
+				ps += Math.log(probPos(tok));
+				pn += Math.log(probNeg(tok));
 			}
 
 			if (ps < pn)
@@ -170,14 +170,14 @@ public class NaiveBayesLog {
 		return cont;
 	}
 
-	private static double probSpam(String s) {
+	private static double probPos(String s) {
 		if (posSet.containsKey(s))
 			return (posSet.get(s) + 1) / (numPosWords + numWords);
 		else
 			return 1.0 / (numPosWords + numWords);
 	}
 
-	private static double probNonSpam(String s) {
+	private static double probNeg(String s) {
 		if (negSet.containsKey(s))
 			return (double) (negSet.get(s) + 1) / (numNegWords + numWords);
 		else
