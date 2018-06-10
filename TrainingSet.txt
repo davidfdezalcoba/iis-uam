@@ -1,3 +1,4 @@
-SPAM buy viagra viagra
-SPAM offer viagra
-NSPAM house offer
+SPAM Chinese Beijing Chinese
+SPAM Chinese Chinese Shanghai
+SPAM Chinese Macao
+NSPAM Tokyo Japan Chinese
