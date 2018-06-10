@@ -45,7 +45,7 @@ public class NaiveBayesLog {
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			System.out.println("Something happened while reading files.");
+			System.out.println("Something happened while reading files...");
 			e.printStackTrace();
 		}
 	}
